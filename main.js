@@ -22,10 +22,14 @@ class Media {
     }
 
     toggleCheckOutStatus() {
-        if(this._isCheckedOut === true) {
-            this._isCheckedOut = false;
-        } else if(this._isCheckedOut === false) {
-            this._isCheckedOut = true;
-        }
+       this._isCheckedOut = !this._isCheckedOut;
+    }
+
+    getAverageRating() {
+        let ratingsSum = this.ratings.reduce((currentSum, rating) => currentSum + rating, 0);
+
+        const lengthArr = ratings.length;
+
+        return ratingsSum / lengthArr;
     }
 }
