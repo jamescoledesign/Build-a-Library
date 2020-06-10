@@ -6,11 +6,11 @@ class Media {
     }
 
     get title() {
-        return.this._title;
+        return this._title;
     }
 
     get isCheckedOut() {
-        return.this._isCheckedOut;
+        return this._isCheckedOut;
     }
 
     get ratings() {
@@ -32,4 +32,25 @@ class Media {
 
         return ratingsSum / lengthArr;
     }
+
+    addRating(data) {
+        this.ratings.push(data);
+    }
+}
+
+class Book extends Media {
+    constructor(author, title, pages, isCheckedOut, ratings) {
+        super(title, isCheckedOut);
+        this._author = author;
+        this._pages = pages;
+    }
+
+    get author() {
+        return this._author;
+    }
+
+    get pages() {
+        return this._pages;
+    }
+
 }
